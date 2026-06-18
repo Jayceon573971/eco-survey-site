@@ -1,0 +1,105 @@
+/* 熊座科技 Ursa — 共用樣式（綠金、留白、襯線標題；無 emoji，重質感） */
+:root{
+  --forest:#14331c; --green:#2f7a3a; --green-d:#1f5a2a;
+  --gold:#b8902f; --gold-l:#d8b24e;
+  --ink:#1f2a20; --mut:#5d6b5d; --paper:#faf8f3; --card:#ffffff; --line:#e7e3d8;
+  --serif:"Iowan Old Style","Apple Garamond",Georgia,"Songti TC","Noto Serif TC",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:var(--green-d);text-decoration:none}
+a:hover{color:var(--gold)}
+.container{max-width:1060px;margin:0 auto;padding:0 24px}
+
+/* ── 頁首 ── */
+.site-head{position:sticky;top:0;z-index:20;background:rgba(250,248,243,.86);
+  backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink)}
+.brand:hover{color:var(--ink)}
+.brand .mark{width:40px;height:40px;flex:none}
+.brand .name{font-weight:800;font-size:18px;letter-spacing:.02em;line-height:1.1}
+.brand .name b{color:var(--green-d)}
+.brand .name span{display:block;font-family:var(--serif);font-weight:600;font-size:12px;
+  letter-spacing:.42em;color:var(--gold);margin-top:2px}
+.site-nav a{margin-left:26px;color:var(--mut);font-weight:600;font-size:15px;letter-spacing:.02em}
+.site-nav a:hover{color:var(--green-d)}
+
+/* ── 區塊 ── */
+section{padding:72px 0}
+.eyebrow{font-family:var(--serif);letter-spacing:.4em;text-transform:uppercase;
+  color:var(--gold);font-size:13px;font-weight:600}
+h1{font-family:var(--serif);font-weight:600;color:var(--green-d);
+  font-size:clamp(34px,6vw,52px);line-height:1.12;letter-spacing:.01em;margin:.18em 0}
+h2{font-family:var(--serif);font-weight:600;color:var(--green-d);font-size:28px;margin:0 0 .2em}
+.rule{width:54px;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-l));
+  border-radius:3px;margin:18px 0 0}
+.lead{color:var(--mut);font-size:19px;max-width:680px;line-height:1.7}
+.muted{color:var(--mut)}
+
+/* ── Hero ── */
+.hero{text-align:center;padding:96px 0 78px;
+  background:radial-gradient(120% 90% at 50% -10%,#fff 0%,var(--paper) 60%)}
+.hero .rule{margin:22px auto 0}
+.hero .lead{margin:18px auto 30px}
+
+/* ── 按鈕 ── */
+.btn{display:inline-block;font-weight:700;font-size:15px;letter-spacing:.02em;
+  padding:14px 30px;border-radius:999px;border:1.5px solid transparent;margin:5px;transition:.15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--green-d);color:#fff} .btn-primary:hover{background:var(--forest);color:#fff}
+.btn-outline{background:transparent;color:var(--green-d);border-color:var(--green-d)}
+.btn-outline:hover{background:var(--green-d);color:#fff}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold));color:#23200f}
+.btn-gold:hover{color:#23200f;filter:brightness(1.05)}
+
+/* ── 卡片 / 格線 ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;margin-top:34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px 26px}
+.card .ic{color:var(--green);width:30px;height:30px;margin-bottom:14px}
+.card h3{margin:0 0 8px;color:var(--green-d);font-size:18px;font-weight:800}
+.card p{margin:0;color:var(--mut);font-size:15.5px;line-height:1.7}
+
+/* 產品卡（可點） */
+.product{display:block;background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:32px 30px;color:inherit;transition:.18s}
+.product:hover{color:inherit;border-color:#d8cfb6;box-shadow:0 16px 40px rgba(20,51,28,.10);transform:translateY(-3px)}
+.product .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;
+  color:#fff;background:var(--green);border-radius:999px;padding:4px 12px}
+.product .tag.soon{background:#c7c2b3;color:#fff}
+.product h3{font-family:var(--serif);font-weight:600;color:var(--green-d);font-size:23px;margin:16px 0 8px}
+.product p{margin:0;color:var(--mut)}
+.product .go{margin-top:18px;color:var(--green-d);font-weight:800;letter-spacing:.02em}
+
+/* 區段背景 */
+.band{background:linear-gradient(180deg,#fff,#fbfaf5);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* 條列價值 */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;margin-top:34px}
+.value{padding-left:18px;border-left:2px solid var(--gold)}
+.value h4{margin:0 0 6px;color:var(--green-d);font-size:17px}
+.value p{margin:0;color:var(--mut);font-size:15.5px}
+
+/* 內容頁 */
+.crumb{color:var(--mut);font-size:14px;letter-spacing:.02em;padding-top:18px}
+.crumb a{color:var(--mut)} .crumb a:hover{color:var(--green-d)}
+.prose{max-width:780px;padding-bottom:72px}
+.prose h2{font-size:21px;margin-top:36px}
+.prose p,.prose li{color:#33402f}
+.prose table{border-collapse:collapse;width:100%;margin:14px 0}
+.prose th,.prose td{border:1px solid var(--line);padding:10px 12px;text-align:left;font-size:15.5px}
+.prose th{background:#f3f0e7;color:var(--green-d)}
+.callout{background:#fbf6e9;border:1px solid #ecdfba;border-left:4px solid var(--gold);
+  border-radius:12px;padding:18px 20px;color:#6a5a2b;font-size:15px}
+.links a{display:inline-block;margin:0 22px 8px 0;font-weight:700;color:var(--green-d)}
+
+/* ── 頁尾 ── */
+.site-foot{background:var(--forest);color:#cfe0cf;padding:46px 0;margin-top:20px}
+.site-foot .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+.site-foot .fbrand{font-family:var(--serif);font-size:20px;color:#fff;letter-spacing:.04em}
+.site-foot a{color:#e7d49a;margin-right:20px;font-weight:600}
+.site-foot a:hover{color:#fff}
+.site-foot .fine{color:#85a088;font-size:13px;margin-top:18px;width:100%}
